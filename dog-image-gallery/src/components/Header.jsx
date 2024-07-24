@@ -6,7 +6,7 @@ import React from 'react';
 
 function Header(){
     return(
-        <header>
+        <header className='DogAppHeader'>
             <h1>
                 Dog Image Gallery
             </h1>
