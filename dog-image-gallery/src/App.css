@@ -4,11 +4,13 @@
 
 .App {
   text-align: center;
+  margin: 10px;
 }
 
 .App header{
   font-family: 'Courier New', Courier, monospace;
-  font-size: 48pt;
+  font-size: 36pt;
   color: blue;
   text-decoration: dotted;
 }
+

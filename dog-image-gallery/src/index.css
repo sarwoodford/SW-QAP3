@@ -6,4 +6,6 @@ body{
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
   background-color: rgb(99, 150, 252);
+  padding: 15px;
 }
+

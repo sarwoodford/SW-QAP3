@@ -4,18 +4,34 @@
 
 import React from 'react';
 
-function ImageGallery({images}){
-    if (! images || !Array.isArray(images)){
-        throw new Error('Error handling images. Please retry.')
-    }
+// function ImageGallery({images}){
+//     if (!Array.isArray(images)){
+//         console.log('not an array')
+//         throw new Error('Error handling images. Please retry.')
+//     }
+//     return(
+//         <div>
+//             {images.length > 0 ?(
+//                 images.map((image, index) => (
+//                     <img key={index} src={image} alt='doggy' />
+//                 ))
+//             ):(
+//                 <h5>no images to display. please retry</h5>
+//             )}
+//         </div>
+//     );
+// }
+
+// export default ImageGallery;
+
+const ImageGallery = ({images}) => {
     return(
-        <div>
-            Image Test 
+        <div className = 'ImageGallery'>
             {images.map((image, index) => (
-                <img key={index} src={image} alt='dog'></img>
+                <img key={index} src={image} alt='doggy' className='image'/>
             ))}
         </div>
     );
 }
 
-export default ImageGallery;
+export default ImageGallery

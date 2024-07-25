@@ -7,9 +7,7 @@ import React from 'react';
 function Header(){
     return(
         <header className='DogAppHeader'>
-            <h1>
-                Dog Image Gallery
-            </h1>
+            <img src='../image/dogImageHeader.png' alt='header'></img>
         </header>
     );
 }
