@@ -5,7 +5,54 @@
 body{
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
-  background-color: rgb(99, 150, 252);
-  padding: 15px;
+  background-color:rgb(226, 186, 246);
+  padding: 15px; 
+
 }
 
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerImage{
+  width: 100%;
+  height: auto;
+}
+
+.headerText{
+  position: absolute;
+  color: rgb(2, 217, 255);
+  font-size: 36pt;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 2px 2px 4px rgb(77, 77, 77);
+}
+
+.label{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12pt;
+}
+
+form{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+  color: purple;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 16pt;
+}
+
+.messageText{
+  color: rgb(128, 128, 241); 
+  font-style: italic;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16pt;
+  text-decoration: underline;
+  margin: 15px;
+}

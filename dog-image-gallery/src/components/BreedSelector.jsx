@@ -34,15 +34,15 @@ function BreedSelector({breedSelected, setBreed, numImage, setNumImage, setFetch
 
     return(
         <form onSubmit = {submit}>
-            <label>
+            <label className = "labelText">
                 Breed: 
-                <select value = {breedSelected} onChange={(e) => setBreed(e.target.value)}>
+                <select value = {breedSelected} onChange={(e) => setBreed(e.target.value)} className='selectBreed'>
                     {breeds.map((breed, index) => (
                         <option key={index} value={breed}>{breed}</option>
                     ))}
                 </select>
             </label>
-            <label>
+            <label className="labelText">
                 Number of Images:
                 <input
                     type='number'
@@ -52,7 +52,7 @@ function BreedSelector({breedSelected, setBreed, numImage, setNumImage, setFetch
                     max='100'
                 />
             </label>
-            <button type='submit'>
+            <button type='submit' className ="buttonText">
                 See Dogs!
             </button>
         </form>

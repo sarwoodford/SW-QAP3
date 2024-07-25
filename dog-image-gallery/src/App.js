@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import BreedSelector from './components/BreedSelector';
 import ImageGallery from './components/ImageGallery';
 import Header from './components/Header';
+import Message from './components/Message';
 
 
 
@@ -14,21 +15,23 @@ function App() {
   const [breedSelected, setBreed] = useState('');
   const [numImage, setNumImage] = useState(1);
   const [fetchImage, setFetchImage] = useState([]);
+  const [message, setMessage] = useState('Please Complete Fields to View Adorbale Images!')
 
   return (
     <div className='App'>
       <Header/>
+      <Message text={message}/>
       <BreedSelector
         breedSelected = {breedSelected}
         setBreed = {setBreed}
         numImage = {numImage}
         setNumImage = {setNumImage}
         setFetchImage = {setFetchImage}
+        setMessage = {setMessage}
       />
       <ImageGallery images = {fetchImage}/>
     </div>
-  );
-}
+  )}
 
 export default App;
 
