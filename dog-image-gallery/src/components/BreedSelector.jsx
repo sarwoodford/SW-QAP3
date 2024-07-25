@@ -15,6 +15,9 @@ function BreedSelector({breedSelected, setBreed, numImage, setNumImage, setFetch
 
     const submit = (e) => {
         e.preventDefault();
+        if (numImage <1 || numImage >100){
+            throw new Error('Please enter a number from 1-100.')
+        }
         fetch(`https://dog.ceo/api/breeds/${breedSelected}/image/random/${numImage}`)
         .then(response => response.json())
         .then(data => setFetchImage(data.message));

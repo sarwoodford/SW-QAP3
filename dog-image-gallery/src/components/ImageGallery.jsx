@@ -4,11 +4,15 @@
 
 import React from 'react';
 
-function ImageGallery({ images }){
-    return (
-        <div className='imageGallery'>
+function ImageGallery({images}){
+    if (! images || !Array.isArray(images)){
+        throw new Error('Error handling images. Please retry.')
+    }
+    return(
+        <div>
+            Image Test 
             {images.map((image, index) => (
-                <img key={index} src={image} alt='doggy'/>
+                <img key={index} src={image} alt='dog'></img>
             ))}
         </div>
     );
