@@ -19,6 +19,7 @@ function BreedSelector({breedSelected, setBreed, numImage, setNumImage, setFetch
         fetch(`https://dog.ceo/api/breeds/${breedSelected}/image/random/${numImage}`)
         .then(response => response.json())
         .then(data => {
+            console.log('API response',data )
             if(Array.isArray(data.message)){
                 setFetchImage(data.message);
             }else{
