@@ -15,10 +15,22 @@ import Footer from './components/Footer';
 function App() {
   const [breedSelected, setBreed] = useState('');
   const [numImage, setNumImage] = useState(1);
-  const [fetchImage, setFetchImage] = useState([]);
+  const [images, setImage] = useState([]);
   const [message, setMessage] = useState('Please Complete Fields to View Adorable Images!')
 
-  console.log(fetchImage)
+  const fetchImage = async() => {
+    try{
+      const response = await fetch(`https://dog.ceo/api/breed/${breedSelected}/images/random/${numImage}`);
+      
+      const data = await response.json();
+        setImage(data.message);
+        setMessage('');
+    }
+      catch(error) {
+        setMessage('Error Fetching Images. Please Retry')
+      }
+    };
+
   return (
     <div className='App'>
       <Header/>
@@ -29,10 +41,9 @@ function App() {
           setBreed = {setBreed}
           numImage = {numImage}
           setNumImage = {setNumImage}
-          setFetchImage = {setFetchImage}
-          setMessage = {setMessage}
+          fetchImage = {fetchImage}
         />
-        <ImageGallery images = {fetchImage}/>
+        <ImageGallery images = {images}/>
       </div>
       <Footer />
     </div>

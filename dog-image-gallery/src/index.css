@@ -88,3 +88,8 @@ footer p{
 .Main{
   flex-grow: 1;
 }
+
+.ImageGallery img{
+  width: 100px;
+  height: 100px;
+}

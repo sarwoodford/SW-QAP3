@@ -4,34 +4,19 @@
 
 import React, { useState, useEffect } from 'react';
 
-function BreedSelector({breedSelected, setBreed, numImage, setNumImage, setFetchImage}){
+function BreedSelector({breedSelected, setBreed, numImage, setNumImage, fetchImage}){
     const [breeds, setBreeds] = useState([]);
 
     useEffect(() => {
-        fetch('https://dog.ceo/api/breeds/list/all')
+        fetch(`https://dog.ceo/api/breeds/list/all`)
         .then(response => response.json())
         .then(data => setBreeds(Object.keys(data.message)));
     }, []);
 
     const submit = (e) => {
         e.preventDefault();
-
-        fetch(`https://dog.ceo/api/breeds/${breedSelected}/image/random/${numImage}`)
-        .then(response => response.json())
-        .then(data => {
-            console.log('API response',data )
-            if(Array.isArray(data.message)){
-                setFetchImage(data.message);
-            }else{
-                console.log('error fetching images.', data);
-                setFetchImage([]);
-            }
-        })
-        .catch(error => {
-            console.log('error fetching images', error);
-            setFetchImage([]);
-        });
-    };
+        fetchImage();
+    };  
 
     return(
         <form onSubmit = {submit}>
